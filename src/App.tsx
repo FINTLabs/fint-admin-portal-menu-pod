@@ -1,18 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {ThemeProvider} from "@mui/styles";
+import Main from './main/Main'
+import MenuProvider from "./context/menuContext";
+import theme from "./template/theme";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          menu pod here
-        </p>
-
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <MenuProvider>
+                <Main/>
+            </MenuProvider>
+        </ThemeProvider>
+    );
 }
 
 export default App;
